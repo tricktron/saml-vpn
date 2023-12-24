@@ -1,0 +1,31 @@
+linters:
+  enable-all: true
+  disable:
+    - deadcode
+    - exhaustivestruct
+    - golint
+    - ifshort
+    - interfacer
+    - maligned
+    - nosnakecase
+    - structcheck
+    - scopelint
+    - varcheck
+
+linters-settings:
+  gci:
+    sections:
+      - standard
+      - prefix(learn-go-with-tests)
+      - default
+    custom-order: true
+  gofumpt:
+    module-path: "learn-go-with-tests"
+  depguard:
+    rules:
+      main:
+        allow:
+          - $gostd
+          - learn-go-with-tests
+          - "github.com/alecthomas/assert/v2"
+          - "github.com/testcontainers/testcontainers-go"
